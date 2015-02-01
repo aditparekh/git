@@ -1,0 +1,130 @@
+setwd('./Documents/Courses/R')
+list.files()
+skeleton = read.table('Skeleton.txt')
+skeleton
+skeleton = read.table('Skeleton.txt', header = TRUE)
+skeleton
+list = skeleton[2,3]
+list
+list = skeleton[,2]
+list
+plot(sort(list))
+data = read.table('LifeExpTable.txt', header = TRUE)
+data
+list = data[,2]
+list
+list = sort(list)
+list
+plot(list)
+plot(lst, type='b')
+plot(list, type='b')
+plot(list, type='boxplot')
+plot(list, type='b')
+plot(list, type='b',xlab = 'Country', ylab = 'Life Exp', ylimc(0,86))
+plot(list, type='b')
+list
+data
+list = [,2]
+list = data[,2]
+list
+plot(list, type='b',xlab = 'Country', ylab = 'Life Exp', ylimc(0,86))
+plot(sort(list), type='b',xlab = 'Country', ylab = 'Life Exp', ylimc(0,86))
+list.files()
+data = read.table('LifeExpTable.txt', header = TRUE)
+data
+list = data[,2]
+list
+boxplot(list)
+summary(list)
+grades = c(1,2,3,4,5,6)
+grades[2,3]
+grades[2:3]
+skeleton = read.table('Skeleton.txt', hearder = TRUE)
+skeleton = read.table('Skeleton.txt', header = TRUE)
+attach(skeleton)
+skeleton
+skeleton$Observation
+Observatoin
+Observation
+stats = cbind(BMI, DGDifference)
+stats
+hist(skeleton)
+hist(data)
+list
+hist(list)
+regions
+Regions
+skeleton
+Sex
+table(Sex)
+barplot(table(Sex))
+barplot(table(Sex), col = rainbow(2))
+barplot(table(Sex), col = rainbow(2), names.arg = 'M')
+barplot(table(Sex), col = rainbow(2), names.arg = M)
+sex_name = c('M','F')
+barplot(table(Sex), col = rainbow(2), names.arg = sex_name)
+pie(table(count)
+pie(table(count)
+pie(table(count))
+pie(table(Sex))
+pie(table(Sex),lable = sex_name)
+pie(table(Sex),label = sex_name)
+list.files()
+life = read.table('LifeExpRegion.txt')
+life = read.table('LifeExpRegion.txt',header = TRUE)
+life
+life = read.table('LifeExpRegion.txt')
+life
+colnames(life) = c('Country', 'Lifeexp', 'Region')
+life
+attach(life)
+life$Region
+Region
+life[Region == 'EAP']
+life[Region=='EAP']
+life[Regions=='EAP']
+life
+life[Region=='EAP']
+life[Region=='EAP',]
+EAP = life[Region=='EAP',]
+EAP
+region=split(life, Region)
+region
+EAP
+SSA = life[Region='SSA',]
+SSA = life[Region=='SSA',]
+SSA
+boxplot(EAP[,2],SSA[,2])
+boxplot(EAP[,2],SSA[,2], border = rainbow(2))
+boxplot(EAP[,2],SSA[,2], border = rainbow(2),range = 0)
+boxplot(EAP[,2],SSA[,2], border = rainbow(2),range = 0, names = c('EAP','SSA'))
+boxplot(life~Region, border = rainbow(2),range = 0, names = c('EAP','SSA'))
+life
+boxplot(life~Region)
+life
+boxplot(Lifeexp ~ Region)
+skeleton
+attach(skeleton)
+Age
+boxplot(DGDifference)
+boxplot(Sex~DGDifference)
+male = skeleton[Sex == '1']
+male = skeleton[Sex == '1',]
+male
+boxplot(male[,6])
+colnames
+life
+boxplot(DGDifference~Sex)
+boxplot(BMI)
+boxplot(DGDifference ~BMI)
+BMI = factor(BMI, levels = c('c(‘underweight’, ‘normal’, ‘overweight’, ‘obese’))
+BMI
+sad
+ad
+BMI
+exit
+exit()
+clear
+asd
+q
+z

@@ -1,0 +1,60 @@
+<!Doctype html>
+<html>
+<head> 
+	<title> Drag </title>
+
+	<script type='text/javascript' src='modernizr.custom.38894.js'> </script>
+	<script type='text/javascript'> 
+		if (Modernizr.draganddrop && window.FileReader){
+			function allowDrop(ev){ 
+			ev.preventDefault();
+			}
+			
+			function drag(ev){
+			ev.dataTransfer.setData('Text',ev.target.id);
+			}
+			
+			function drop(ev){
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData('Text');
+			ev.target.appendChild(document.getElementById(data));
+			}
+		
+		}
+		
+		else {
+		document.write('this browser does not support');
+		}
+	
+	</script>
+</head>
+<body>
+<h1> Drag the HTML pic in the box </h1>
+<div style="float:left;padding:10px;width:250px;height:300px; border-style:solid; border-width:2px;border-color:grey;"
+	ondrop='drop(event)' ondragover='allowDrop(event)'> 
+</div>
+<img id='a' src="html5.jpg" draggable='true' ondragstart='drag(event)'>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

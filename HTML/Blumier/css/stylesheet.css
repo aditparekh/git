@@ -1,0 +1,30 @@
+#status_bar {
+top:0;
+margin:0px;
+padding:0;
+
+width:100px;
+height:10px;
+background-color:black;
+}
+
+#center{
+position:absolute;
+left:225px;
+top:11px;   
+bottom:0px;
+right:0;
+overflow: auto;
+-webkit-overflow-scrolling: touch;
+}
+
+#left{
+position:absolute;
+left:0;
+top:11px;
+bottom:0px;
+width:225px;
+overflow:auto;
+background: #414141; 
+}
+

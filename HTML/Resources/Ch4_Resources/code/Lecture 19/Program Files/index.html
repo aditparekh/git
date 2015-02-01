@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Drag And Drop</title>
+<style type="text/css">
+#div1 {width:240px;height:240px;padding:10px;border:1px solid #aaaaaa;float:left;}
+#drag1{float:left;}
+</style>
+<script type="text/javascript" src="modernizr.custom.38894.js"></script>
+<script>
+if(window.FileReader && Modernizr.draganddrop){
+
+	function allowDrop(ev){
+		ev.preventDefault();
+	}
+
+	function drag(ev){
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+
+	function drop(ev){
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+} else {
+	document.write('Sorry, your browser does not support drag and drop');
+}
+</script>
+</head>
+<body>
+
+<h1>Drag the HTML5 Logo To The Box</h1>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img src="html5.jpg" draggable="true" ondragstart="drag(event)">
+
+</body>
+</html>

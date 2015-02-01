@@ -1,0 +1,7 @@
+Filename: Testdata.dat
+Date of creation: Aug 30, 2012
+Purpose: To test loading data into R
+Show, LeadCharacter1, LeadCharacter2, SuppCharacter1, SuppCharacter2, NumYears
+Seinfeld, Jerry, George, Elaine, Kramer, 15
+Big Bang Theory, Sheldon, Leonard, Koothrapalli, Wolowitz, 6
+Friends, Chandler, Joey, Ross, Monica, 12

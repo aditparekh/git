@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Monaco;
+}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red241\green241\blue241;\red242\green242\blue242;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Q3:\
+\pard\pardeftab720\sl420
+
+\f1\fs28 \cf2 ggplot(tons_per_year, aes(x = year, y = Emissions)) +\
+\'a0 \'a0 \'a0 \'a0 geom_bar(aes(fill = type), stat = "identity") +\
+\'a0 \'a0 \'a0 \'a0 geom_smooth(aes(group = 1), method = "lm", se = FALSE) +\
+\'a0 \'a0 \'a0 \'a0 facet_grid(. ~ type) +\
+\'a0 \'a0 \'a0 \'a0 guides(fill = FALSE) +\
+\'a0 \'a0 \'a0 \'a0 xlab("Year") + ylab("Emissions (tons)") +\
+\'a0 \'a0 \'a0 \'a0 ggtitle(expression(paste("PM"[2.5], " Emissions by Source Type (Baltimore City, Maryland)")))\
+\
+\
+Q4:\
+qplot(year, Emissions, data=coal_data, geom="bar", stat="identity",\
++       xlab = "Year", ylab = "Emissions (thousands of tons)",\
++       main = expression(paste("PM"[2.5], " Emissions from Coal Combustion-Related Sources"))) +\
++     scale_y_continuous(labels = function(x) \{x/1000\})\
+\
+Q6:\
+\pard\pardeftab720\sl420
+\cf2 \cb3 county_labeller <- function(var, val) \{counties_of_interest[as.character(val)]\}\
+\
+\
+\pard\pardeftab720\sl420
+
+\f2\fs26 \cf2 \cb4 plot(target_year, y = year_tot_pm25/1000000, type = "p",  xlim = NULL,\
+     ylim = NULL, log = "", main = expression("Total Annual" ~ PM[2.5] ~\
+                                "Emissions in United States"), \
+     xlab = "Year", ylab = expression(PM[2.5] ~\
+                        "Emissions (megatons)")\
+     ,xaxp=c(1999,2008,3),yaxp=NULL,yaxt="n",pch=19)\
+axis(2,yaxp=c(3,8,5))\
+model<-lm(year_tot_pm25/1000000 ~ target_year)\
+abline(model, lwd=2, col="blue")\
+dev.copy(png,file="~/Desktop/job/JHDS/ExData_Plotting2/plot1.png")\
+dev.off()\
+\
+\
+gg<-g + geom_point() + \
+  facet_wrap(  ~ type, scales="free") + \
+  geom_smooth(method="lm",se=FALSE) + \
+  theme_bw() + \
+  scale_x_continuous( breaks=c(1999,2002,2005,2008)) +\
+  theme(axis.text.x=element_text(size=10),axis.text.y=element_text(size=10)) +\
+  theme(panel.margin=unit(1,"lines")) +\
+  theme(axis.title.x=element_text(size=14),\
+        axis.title.y=element_text(size=14),\
+        plot.title=element_text(size=16)) + \
+  theme(axis.ticks.x = element_line(size = 1)) +\
+  theme(plot.margin=unit(c(1.5,2,2,0.5),"lines")) +\
+  xlab("Year") +\
+  ylab(expression("Annual" ~ PM[2.5] ~\
+                    "Emissions (tons)")) +\
+  labs(title=expression("Annual" ~ PM[2.5] ~ \
+                          "Emissions in Baltimore City, MD by Source Type"))\
+}

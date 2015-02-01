@@ -1,0 +1,105 @@
+---
+title: "project1.2"
+author: "Adit"
+date: "August 24, 2014"
+output: html_document
+---
+After loading the data, one can see that there are three variables with 60 observations.3 levels of dosage - 0.5,1,2 and two levels of suppliments - OJ(orange juice) and VC (Vitamin C).
+
+```{r,echo=FALSE,warning=FALSE,message=F}
+library(ggplot2)
+library(gridExtra)
+library(plyr)
+library(lattice)
+library(reshape2)
+
+#loading the data file & undertanding dataset
+data<-ToothGrowth
+summary<-str(data) #three variables with 60 observations.
+#factor(data$dose) # 3 levels of dosage - 0.5,1,2
+#factor(data$supp) # two levels of suppliments - OJ(orange juice) and VC (Vitamin C)
+
+Dose<-factor(data$dose)
+```
+
+
+
+
+Below we create a boxplot and a violin plot to understand the variablity of the length based on the suppliment and dosage.
+
+```{r,echo=FALSE,warning=FALSE,message=F}
+b1<-ggplot(data=data,aes(y=len,x=supp,fill=Dose))+
+  geom_boxplot()+facet_grid(.~dose) +
+  ggtitle("Boxplot of Tooth Length w.r.t Suppliments")+
+  xlab("Suppliments")+
+  ylab("Tooth Length") +
+  theme(axis.title=element_text(size=8),plot.title=element_text(size=8,face="bold"))
+
+v1<-ggplot(data=data,aes(y=len,x=factor(dose),fill=supp))+
+  geom_violin()+facet_grid(.~supp) +  
+  ggtitle("Violin of Tooth Length w.r.t Suppliments and Dosage")+  
+  xlab("Dosage")+  ylab("Tooth Length")+
+  theme(axis.title=element_text(size=8),plot.title=element_text(size=8,face="bold"))
+```
+
+```{r,echo=TRUE,warning=FALSE,message=F}
+grid.arrange(b1,v1,ncol=2)
+```
+
+One can see that there is high variablity in the Tooth length based on suppliments and dosage. The potential variations are 15 (6C2). 
+
+We use the t test to reject the 15 null hypothesis that:
+<br>1. As the dosage increases the Tooth Length decereases
+<br>2. For the same dosage, VC provides a bigger increase in Tooth Length as compared to OJ.
+
+```{r, echo=FALSE,warning=F,message=FALSE}
+#breaking the data into different dosages
+test1<-subset(ToothGrowth,ToothGrowth$dose==0.5)
+test2<-subset(ToothGrowth,ToothGrowth$dose==1)
+test3<-subset(ToothGrowth,ToothGrowth$dose==2)
+
+#Performing multiple t tests for the following variations. 
+#In effect we have 15 variations 6C2
+```
+
+I have shown a few of the 15 tests below:
+
+```{r, echo=TRUE,warning=F,message=FALSE}
+#1. OJ@0.5 w.r.t OJ@1
+h1<-t.test(test1[test1$supp=='OJ',]$len,test2[test2$supp=='OJ',]$len,paired = FALSE,var.equal = TRUE)
+#2. OJ@0.5 w.r.t OJ@2
+h2<-t.test(test1[test1$supp=='OJ',]$len,test3[test3$supp=='OJ',]$len,paired = FALSE,var.equal = TRUE)
+#3. OJ@1 w.r.t OJ@2 almost the same
+h3<-t.test(test2[test2$supp=='OJ',]$len,test3[test3$supp=='OJ',]$len,paired = FALSE,var.equal = TRUE)
+
+#4. VC@0.5 w.r.t VC@1
+h4<-t.test(test1[test1$supp=='VC',]$len,test2[test2$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+#5. VC@0.5 w.r.t VC@2
+h5<-t.test(test1[test1$supp=='VC',]$len,test3[test3$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+#6. VC@1 w.r.t VC@2
+h6<-t.test(test2[test2$supp=='VC',]$len,test3[test3$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+
+#7. OJ@0.5 w.r.t VC@0.5
+h7<-t.test(test1[test1$supp=='OJ',]$len,test1[test1$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+#8. OJ@0.5 wr.t VC@1 almost the same
+h8<-t.test(test1[test1$supp=='OJ',]$len,test2[test2$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+#9. OJ@0.5 wr.t VC@2
+h9<-t.test(test1[test1$supp=='OJ',]$len,test3[test3$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+```
+
+```{r, echo=FALSE,warning=F,message=FALSE}
+#10. OJ@1 w.r.t VC@0.5
+h10<-t.test(test2[test2$supp=='OJ',]$len,test1[test1$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+#11. OJ@1 w.r.t VC@1
+h11<-t.test(test2[test2$supp=='OJ',]$len,test2[test2$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+#12. OJ@1 w.r.t VC@2 the same
+h12<-t.test(test2[test2$supp=='OJ',]$len,test3[test3$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+
+#13. OJ@2 w.r.t VC@0.5
+h13<-t.test(test2[test2$supp=='OJ',]$len,test1[test1$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+#14. OJ@2 w.r.t VC@1
+h14<-t.test(test2[test2$supp=='OJ',]$len,test2[test2$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+#15. OJ@2 w.r.t VC@2 #the same
+h15<-t.test(test2[test2$supp=='OJ',]$len,test3[test3$supp=='VC',]$len,paired = FALSE,var.equal = TRUE)
+```
+

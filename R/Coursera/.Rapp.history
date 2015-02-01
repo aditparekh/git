@@ -1,0 +1,250 @@
+myVector
+class(myVector)
+myMatrix <-myVector
+?matrix()
+?matrix
+myMatrix2 <-(1:20,4,5)
+myMatrix2 <-(1:20,nrows=4,ncol=5)
+myMatrix2 <-(1:20,nrow=4,ncol=5)
+myMatrix2 <-matrix(1:20,nrow=4,ncol=5)
+identical(myMatrix,myMatrix2)
+patients <-("Bill","Gina","Kelly","Sean")
+patients <-c("Bill","Gina","Kelly","Sean")
+cbind(patients,myMatrix)
+myData<-data.frame(patients,myMatrix)
+myData
+class(myMatrix)
+class(myData)
+cnames=c("patient", "age", "weight", "bp", "rating", "test")
+cnames
+skip()
+cnames
+colnames(myData) <-cnames
+myData
+x<-1:20
+if (x[x>5]){}
+x<-2
+if (x>2){}
+if (x>2){ x}
+if (x>2){ x
+else {}
+if (x>2){
+print(x)
+} else
+print "NA"}
+if (x>2){
+print(x)
+}
+if(x>3){
+y<-10
+} else{
+y<-0
+}
+x <-4
+y
+if(x>3){
+y<-10
+} else{
+y<-0
+}
+y
+y<- if(x>0){
+10
+}else{
+0
+}
+y
+for(i in 10){
+print(i)}
+i
+for (i in 1:10){}
+for (i in 1:10){
+print i}
+for (i in 1:10){
+print (i)}
+i
+for (i in 1:10){
+x<-c(x,i)
+}
+x
+i=0
+for (i in 1:10){
+x<-c(x,i)
+print (x)}
+x<-0
+i,x<-0,0
+x<-c(x,i)
+x<-0
+for (i in 1:10){
+x<-c(x,i)
+print (x)}
+x<-0
+i<-0
+for (i in 1:10){
+x<-c(x,i)
+}
+x
+seq_along(x)
+seq(x)
+count<-0
+f <-function(a){
+a = a*3
+print(a)
+}
+f(4)
+f <-function(a){
+a = a*3
+return a
+f <-function(a){
+a = a*3
+return a}
+f<-function(a,b){
+a^2
+}
+f(2)
+args <-function(...,sep=" ", collapse = NULL){
+paste(...)
+}
+args(1,2,3)
+args(a,b,c,adit,parekh)
+args("a","b","c","adit",'parekh")
+f
+d;lafm;sdlf
+d;slf
+;;;
+;
+exit
+stop
+stop()
+stop{}
+exit
+myplot <-function(x,y,type ="1",....){
+plot(x,y,type = type...)}
+?plot
+?paste
+args<-function(...,sep=" ",collapse=NULL){
+paste(....,sep=" ",collapse=NULL)
+}
+x<-c('check to see')
+y <-c("if they join")
+args(x,y)
+z <- c('check','to', 1,2)
+z
+args(z)
+args<-function(...,sep=" ",collapse=NULL){
+paste(...,sep=" ",collapse=NULL)
+}
+args(x,y)
+POSIXct
+sys.time
+sys.time()
+Sys.time()
+as.POSIXct(Sys.time())
+as.POSIXlt(Sys.time())
+x<-Sys.time()
+x
+x<-as.POSIXlt(Sys.time())
+x
+x<-as.POSIXct(Sys.time())
+x
+unclass(x)
+x<-as.POSIXlt(Sys.time())
+unclass(x)
+names(unclass(x))
+y<-unclass(x)
+y
+names(unclass(x))
+names(x)
+x$sec
+cube <-function(x,n){
+x^3}
+cube(3)
+a<-cbind(3,5)
+a
+2/a
+1+2/a
+x<-numeric()
+x
+numeric()
+x=numeric()
+x
+m<-NULL
+,
+m
+x<<-u
+x<<-y
+y
+rm(list=ls(all=TRUE))
+names
+names()
+?setmean
+?setmean()
+?getmean()
+?get()
+?set
+?$
+a<-list(a=1:2,b=3:4,c='a')
+a
+a$a
+rm(list=ls(all=TRUE))
+x<-matrix(1:3,3:4,2,3)
+x
+matrix(1:6,3,2)
+x<matrix(1:100,10,10)
+x<matrix(1:101,10,10)
+x<matrix(1:50,5,10)
+x<matrix(1:25,5,5)
+x<-matrix(1:25,5,5)
+x<-matrix(1:100,10,10)
+x
+Solve(x)
+SOLVE(X)
+solve(x)
+x<-matrix(1:4,2,2)
+solve(x)
+x
+x<-matrix(1:20,10,2)
+solve(x)
+x<-matrix(1:36,6,6)
+solve(x)
+x
+a<-1:18
+b<-19:26
+b<-19:36
+x<-matrix(a,b,6,6)
+36-19
+?matrix
+cbind(a,b)
+is.matrix
+?is.matrix
+a<-c(1,2,3)
+a
+numeric(a)
+is.numeris(a)
+is.numeric(a)
+getwd()
+setwd("./Users/aditparekh/")
+?var
+a<-1:2
+a
+a<-c(1:3)
+a
+pnorm(95%)
+pnorm(q=.95)
+pnorm(1.96)
+pnorm(1.9)
+pnorm(1.8)
+pnorm(1.7)
+pnorm(1.96)
+pnorm(1.65)
+a<-matrix(c(1,-1,110),ncol=1)
+a
+polyroot(a)
+round(polyroot(a),2)
+.15^2
+.15^2*5000
+5*95
+c4*96
+4*96
+setwd('./Documents/Courses/R/Coursera/')
+submit()

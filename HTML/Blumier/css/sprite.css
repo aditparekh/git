@@ -1,0 +1,92 @@
+.blackSprite {background: url('../images/black_sprite.png'); display:inline-block;}
+.graySprite {background: url('../images/gray_sprite.png'); display:inline-block;}
+.whiteSprite {background: url('../images/white_sprite.png'); display:inline-block;}
+
+.spriteIcon{width: 50px; height: 50px;}
+
+.activity {background-position: -0px -0px;}
+.add {background-position: -50px -0px;}
+.add_user {background-position: -100px -0px;}
+.addn_user {background-position: -150px -0px;}
+.adv {background-position: -200px -0px;}
+.attach {background-position: -250px -0px;}
+.back {background-position: -300px -0px;}
+.bookmark {background-position: -350px -0px;}
+
+.bp {background-position: -0px -50px;}
+.c_details {background-position: -50px -50px;}
+.c_info {background-position: -100px -50px;}
+.calendar {background-position: -150px -50px;}
+.cancel_small {background-position: -200px -50px;}
+.close {background-position: -250px -50px;}
+.company {background-position: -300px -50px;}
+.compose {background-position: -350px -50px;}
+
+.confirmpassword {background-position: -0px -100px;}
+.contact {background-position: -50px -100px;}
+.detail_info {background-position: -100px -100px;}
+.dh {background-position: -150px -100px;}
+.dm {background-position: -200px -100px;}
+.dmcounter {background-position: -250px -100px;}
+.doc {background-position: -300px -100px;}
+.dollar {background-position: -350px -100px;}
+
+.done {background-position: -0px -150px;}
+.down {background-position: -50px -150px;}
+.download {background-position: -100px -150px;}
+.edit {background-position: -150px -150px;}
+.email {background-position: -200px -150px;}
+.ent {background-position: -250px -150px;}
+.graph {background-position: -300px -150px;}
+.grid {background-position: -350px -150px;}
+
+.img {background-position: -0px -200px;}
+.industry {background-position: -50px -200px;}
+.info {background-position: -100px -200px;}
+.inv {background-position: -150px -200px;}
+.job {background-position: -200px -200px;}
+.left {background-position: -250px -200px;}
+.link {background-position: -300px -200px;}
+.linkedin {background-position: -350px -200px;}
+
+
+.linkedin_2 {background-position: -0px -250px;}
+.list {background-position: -50px -250px;}
+.location {background-position: -100px -250px;}
+.mobile {background-position: -150px -250px;}
+.next {background-position: -200px -250px;}
+.password {background-position: -250px -250px;}
+.pdf {background-position: -300px -250px;}
+.play {background-position: -350px -250px;}
+
+.portfolio {background-position: -0px -300px;}
+.ppt {background-position: -50px -300px;}
+.promoter {background-position: -100px -300px;}
+.references {background-position: -150px -300px;}
+.reply {background-position: -200px -300px;}
+.right {background-position: -250px -300px;}
+.right_small {background-position: -300px -300px;}
+.rupee {background-position: -350px -300px;}
+
+.search {background-position: -0px -350px;}
+.select {background-position: -50px -350px;}
+.select_small {background-position: -100px -350px;}
+.send {background-position: -150px -350px;}
+.settings {background-position: -200px -350px;}
+.tags {background-position: -250px -350px;}
+.twitter {background-position: -300px -350px;}
+.up {background-position: -350px -350px;}
+
+.upgrade {background-position: -0px -400px;}
+.upload {background-position: -50px -400px;}
+.user {background-position: -100px -400px;}
+.user_email {background-position: -150px -400px;}
+.user_male {background-position: -200px -400px;}
+.users_small {background-position: -250px -400px;}
+.ven {background-position: -300px -400px;}
+.website {background-position: -350px -400px;}
+
+.xls {background-position: -0px -450px;}
+.zip {background-position: -50px -450px;}
+/*Not found*/
+.project_wall{background: url('../images/nf/project_wall.png'); display:inline-block;}
